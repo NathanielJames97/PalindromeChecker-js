@@ -5,41 +5,22 @@ const checkButton = document.getElementById("check-btn");
 const resultDiv = document.getElementById("result");
 
 // Listener for the button, saving the value for use.
-
 checkButton.addEventListener("click", function() {
-    // Use the correct variable name that references the input field
-    const inputValue = inputWord.value;
-  
-    let savedValue = inputValue;
+  const inputValue = inputWord.value;
 
-    // Preform a regex expression to get all letters,digits.
-    savedValue = savedValue.replace(/[^a-z0-9]/gi, '');
+  // Preform a regex expression to get all letters,digits.
+  let savedValue = inputValue.replace(/[^a-z0-9]/gi, '');
+  savedValue = savedValue.toLowerCase();
 
-    savedValue = savedValue.toLowerCase();
+  // Now to create a variable to hold the flipped variable
+  let flippedValue = savedValue.split("").reverse().join("");
 
-    // Now to create a variable to hold the flipped variable.
-
-    flippedValue = savedValue.split("").reverse().join("");
-
-
-   // alert("The cleaner value is" + savedValue + "Your reversed value is" + flippedValue);
-
-    if (inputValue == "") {
-        alert("Please input a value");
-    }
-    else if (savedValue == flippedValue)
-    {
-        resultDiv.innerHTML = "\"" + savedValue + "\"" + "is a palindrome";
-    }
-    else {
-        resultDiv.innerHTML = "\"" + savedValue + "\"" + " isn't a palindrome";
-    }
-  
-    //alert("Entered value is:" + savedValue);  // Add colon after "is"
-  
-    // Close the anonymous function parenthesis
-  });
-  const darkModeCheckbox = document.getElementById('dark-mode-checkbox');
-darkModeCheckbox.addEventListener('change', function() {
-  document.body.classList.toggle('dark-mode');
+  // Now you can use flippedValue for comparison
+  if (inputValue === "") {
+    alert("Please input a value");
+  } else if (savedValue === flippedValue) {
+    resultDiv.innerHTML = inputValue + " is a palindrome";
+  } else {
+    resultDiv.innerHTML = inputValue + " is not a palindrome";
+  }
 });
