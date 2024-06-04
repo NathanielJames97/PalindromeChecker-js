@@ -39,4 +39,7 @@ checkButton.addEventListener("click", function() {
   
     // Close the anonymous function parenthesis
   });
-  
+  const darkModeCheckbox = document.getElementById('dark-mode-checkbox');
+darkModeCheckbox.addEventListener('change', function() {
+  document.body.classList.toggle('dark-mode');
+});

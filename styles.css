@@ -1,32 +1,44 @@
 body {
-    font-family: Arial, sans-serif; /* Basic font stack */
-    margin: 0; /* Remove default margin for better layout control */
-    padding: 20px; /* Add some padding for visual spacing */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    min-height: 100vh; /* Set minimum viewport height for full-screen centering */
+    background-color: #f0f0f0; /* Light mode background color */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for dark mode */
+  }
+  
+  .dark-mode {
+    background-color: #222; /* Dark mode background color */
+    color: #ddd; /* Light text color for dark mode */
   }
   
   #palindrome-checker {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 400px; /* Set a preferred width */
-    margin: 0 auto; /* Center the application horizontally */
-    border: 1px solid #ddd; /* Add a subtle border for definition */
-    border-radius: 5px; /* Rounded corners for a more polished look */
-    padding: 20px; /* Pad the content within the checker */
+    width: 400px;
+    margin: 0 auto; /* Center horizontally */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    transition: background-color 0.3s ease-in-out; /* Apply transition for dark mode */
   }
   
   h1 {
-    margin-top: 0; /* Remove default top margin for better alignment */
+    margin-top: 0;
   }
   
   label {
     margin-bottom: 5px;
-    display: block; /* Display labels on their own line */
+    display: block;
   }
   
   #text-input,
   #check-btn {
-    padding: 10px; /* Consistent padding for input and button */
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
   }
@@ -39,6 +51,43 @@ body {
   #check-btn {
     background-color: #4CAF50; /* Green button for positive action */
     color: white;
-    cursor: pointer; /* Indicate clickable button */
+    cursor: pointer;
+  }
+  
+  #dark-mode-toggle {
+    margin-top: 15px;
+  }
+  
+  #dark-mode-checkbox {
+    display: none; /* Hide the checkbox visually */
+  }
+  
+  #dark-mode-toggle label {
+    cursor: pointer; /* Make the label clickable */
+  }
+  
+  /* Toggle styles when checkbox is checked (dark mode) */
+  body.dark-mode {
+    @extend .dark-mode; /* Apply dark mode styles */
+  }
+  
+  #dark-mode-toggle label::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-left: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #dark-mode-checkbox:checked + label::after {
+    background-color: #4CAF50; /* Green color for checked state (optional) */
+  }
+  
+  /* Optional checkbox slider effect */
+  #dark-mode-toggle label::after {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><circle cx='8' cy='8' r='8' fill='%23fff'%3E</svg>"); /* White circle for slider effect */
   }
   
