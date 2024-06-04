@@ -3,16 +3,16 @@ body {
     margin: 0;
     padding: 20px;
     display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
-    min-height: 100vh; /* Set minimum viewport height for full-screen centering */
-    background-color: #f0f0f0; /* Light mode background color */
-    transition: background-color 0.3s ease-in-out; /* Smooth transition for dark mode */
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    background-color: #f0f0f0; 
+    transition: background-color 0.3s ease-in-out; 
   }
   
   .dark-mode {
-    background-color: #222; /* Dark mode background color */
-    color: #ddd; /* Light text color for dark mode */
+    background-color: #222;
+    color: #ddd;
   }
   
   #palindrome-checker {
@@ -20,11 +20,11 @@ body {
     flex-direction: column;
     align-items: center;
     width: 400px;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
-    transition: background-color 0.3s ease-in-out; /* Apply transition for dark mode */
+    transition: background-color 0.3s ease-in-out;
   }
   
   h1 {
@@ -46,12 +46,14 @@ body {
   #result {
     margin-top: 15px;
     font-weight: bold;
+    
   }
   
   #check-btn {
-    background-color: #4CAF50; /* Green button for positive action */
+    background-color: #4CAF50;
     color: white;
     cursor: pointer;
+    margin-top:12px;
   }
   
   #dark-mode-toggle {
@@ -59,17 +61,14 @@ body {
   }
   
   #dark-mode-checkbox {
-    display: none; /* Hide the checkbox visually */
+    display: none; 
   }
   
   #dark-mode-toggle label {
-    cursor: pointer; /* Make the label clickable */
+    cursor: pointer; 
   }
   
   /* Toggle styles when checkbox is checked (dark mode) */
-  body.dark-mode {
-    @extend .dark-mode; /* Apply dark mode styles */
-  }
   
   #dark-mode-toggle label::after {
     content: "";
@@ -82,9 +81,6 @@ body {
     transition: background-color 0.3s ease-in-out;
   }
   
-  #dark-mode-checkbox:checked + label::after {
-    background-color: #4CAF50; /* Green color for checked state (optional) */
-  }
   
   /* Optional checkbox slider effect */
   #dark-mode-toggle label::after {

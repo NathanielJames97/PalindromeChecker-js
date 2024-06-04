@@ -32,7 +32,7 @@ checkButton.addEventListener("click", function() {
         resultDiv.innerHTML = "\"" + savedValue + "\"" + "is a palindrome";
     }
     else {
-        resultDiv.innerHTML = "\"" + savedValue + "\"" + "isn't a palindrome";
+        resultDiv.innerHTML = "\"" + savedValue + "\"" + " isn't a palindrome";
     }
   
     //alert("Entered value is:" + savedValue);  // Add colon after "is"
