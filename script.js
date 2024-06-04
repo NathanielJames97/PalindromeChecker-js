@@ -2,6 +2,8 @@ const inputWord = document.getElementById("text-input");
 
 const checkButton = document.getElementById("check-btn");
 
+const resultDiv = document.getElementById("result");
+
 // Listener for the button, saving the value for use.
 
 checkButton.addEventListener("click", function() {
@@ -20,10 +22,19 @@ checkButton.addEventListener("click", function() {
     flippedValue = savedValue.split("").reverse().join("");
 
 
-    alert("The cleaner value is" + savedValue + "Your reversed value is" + flippedValue);
+   // alert("The cleaner value is" + savedValue + "Your reversed value is" + flippedValue);
 
     if (inputValue == "") {
         alert("Please input a value");
+    }
+    else if (savedValue == flippedValue)
+    {
+        alert("You have a palindrome!")
+        resultDiv.innerHTML = "\"" + savedValue + "\"" + "is a palindrome";
+    }
+    else {
+        alert("You don't have a palindrome.")
+        resultDiv.innerHTML = "\"" + savedValue + "\"" + "isn't a palindrome";
     }
   
     //alert("Entered value is:" + savedValue);  // Add colon after "is"
