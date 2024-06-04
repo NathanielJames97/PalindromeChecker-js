@@ -10,9 +10,17 @@ checkButton.addEventListener("click", function() {
   
     let savedValue = inputValue;
 
+    // Preform a regex expression to get all letters,digits.
     savedValue = savedValue.replace(/[^a-z0-9]/gi, '');
 
-    alert("The cleaner value is" + savedValue);
+    savedValue = savedValue.toLowerCase();
+
+    // Now to create a variable to hold the flipped variable.
+
+    flippedValue = savedValue.split("").reverse().join("");
+
+
+    alert("The cleaner value is" + savedValue + "Your reversed value is" + flippedValue);
 
     if (inputValue == "") {
         alert("Please input a value");
