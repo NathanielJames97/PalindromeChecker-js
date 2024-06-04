@@ -29,11 +29,9 @@ checkButton.addEventListener("click", function() {
     }
     else if (savedValue == flippedValue)
     {
-        alert("You have a palindrome!")
         resultDiv.innerHTML = "\"" + savedValue + "\"" + "is a palindrome";
     }
     else {
-        alert("You don't have a palindrome.")
         resultDiv.innerHTML = "\"" + savedValue + "\"" + "isn't a palindrome";
     }
   
